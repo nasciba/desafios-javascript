@@ -17,6 +17,29 @@
  * a > b sempre.
  */
 
-const MDC = (a, b) => {}
+const MDC = (a, b) => {
+
+    if (b === 0) {
+        return a;
+    }
+    else {
+        let divisores = [];
+        for (let i = 1; i <= a; i++) {
+            for (let j = 1; j <= b; j++) {
+                if ((b / j) === a / i) {
+                    divisores.push(b / j);
+                    const maximoDivisor = divisores.reduce((a, b) => {
+                        return Math.max(a, b)
+                    });
+                    return maximoDivisor
+                }
+            }
+        }
+    }
+
+
+}
 
 module.exports = MDC
+
+

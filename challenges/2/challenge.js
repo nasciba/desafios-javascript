@@ -18,6 +18,17 @@
 
 const isPrime = require('../../utils/isPrime')
 
-const sumPrimes = n => {}
+const sumPrimes = n => {
+    let sumOfPrimes = 0
+    for (let i = 2; i <= n; i += 1) {
+        if (isPrime(i) === true) {
+            sumOfPrimes += i;
+        }
+    }
+    return sumOfPrimes
+}
+
+
+
 
 module.exports = sumPrimes

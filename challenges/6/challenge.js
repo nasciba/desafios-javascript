@@ -26,6 +26,25 @@
  * }
  */
 
-const extractSize = htmlTemplate => {}
+const extractSize = htmlTemplate => {
+    if (htmlTemplate === '') {
+        return { height: 0, width: 0 };
+
+    }
+    else {
+        const regExpHeight = /height: [0-9]+/
+        const regExpWidth = /width: [0-9]+/
+        const findHeight = htmlTemplate.match(regExpHeight)
+        const findWidth = htmlTemplate.match(regExpWidth)
+        let height = parseInt(findHeight[0].slice(findHeight[0].search(" ")));
+        let width = parseInt(findWidth[0].slice(findWidth[0].search(" ")));
+        let sizeExtracted = {
+            height: height,
+            width: width
+        }
+        return sizeExtracted
+    }
+}
+
 
 module.exports = extractSize
